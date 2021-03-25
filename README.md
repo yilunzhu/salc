@@ -9,10 +9,10 @@ password: 123
 2. The registration function is not supported (since it's not a public website). To add users, please ask the admin to add username and password.
 
 #### Homepage
-TBD
+- TBD
 
 #### Corpus searching
-TBD
+- TBD
 
 ### Restore locally
 Currently the website runs locally. To restore the web in your local environment, please do as follows:

@@ -14,13 +14,31 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf.urls import include
 from django.urls import path
 from login import views as login_views
 from corpus import views as corpus_views
+from corpus import urls as corpus_urls
+from django.views.generic import RedirectView
 
+# url for admin
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', login_views.index),
-    path('login/', login_views.login),
+]
+
+# add first app
+urlpatterns += [
+    path('', login_views.index, name='index'),
+    path('login/', login_views.login, name='login'),
     path('logout/', login_views.logout),
+]
+
+# redirect the home url to login index
+urlpatterns += [
+    path('', RedirectView.as_view(url='/login/')),
+]
+
+# add second app
+urlpatterns += [
+    path('corpus/',include(corpus_urls))
 ]

@@ -5,7 +5,7 @@ from . import models
 
 def index(request):
     pass
-    return render(request, 'login/index.html')
+    return render(request, 'index.html')
 
 
 def login(request):

@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.conf.urls import include
 from django.urls import path
 from login import views as login_views
+from login import urls as login_urls
 from corpus import views as corpus_views
 from corpus import urls as corpus_urls
 from django.views.generic import RedirectView
@@ -27,18 +28,22 @@ urlpatterns = [
 ]
 
 # add first app
+# urlpatterns += [
+#     path('login/',include(login_urls))
+# ]
 urlpatterns += [
-    path('', login_views.index, name='index'),
+    path('index/', login_views.index, name='index'),
     path('login/', login_views.login, name='login'),
-    path('logout/', login_views.logout),
+    path('login_corpus/', login_views.login_corpus, name='login_corpus'),
+    path('logout/', login_views.logout, name='logout'),
 ]
 
 # redirect the home url to login index
 urlpatterns += [
-    path('', RedirectView.as_view(url='/login/')),
+    path('', RedirectView.as_view(url='index/')),
 ]
 
 # add second app
-urlpatterns += [
-    path('corpus/',include(corpus_urls))
-]
+# urlpatterns += [
+#     path('corpus/',include(corpus_urls))
+# ]

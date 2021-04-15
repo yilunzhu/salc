@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>SALC Corpus</title>
+<title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -27,7 +27,6 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
     <a href="{% url 'login_corpus' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Corpus</a>
     <a href="{% url 'login' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Login</a>
     <a href="{% url 'logout' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Logout</a>
-    <a class="w3-bar-item w3-button w3-hide-small w3-hover-white">{{ user.name }}</a>
   </div>
 </div>
 
@@ -36,31 +35,19 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- Main content: shift it to the right by 20 pixels when the sidebar is visible -->
-<div class="w3-main">
+<div class="w3-main" style="margin-left:0px">
 
   <div class="w3-row w3-padding-64">
     <div class="w3-container">
-      {% if request.session.user_name %}
-        <p>{{ request.session.user_name }}, Welcome back!</p>
-      {% endif %}
-    </div>
-    <div class="w3-container">
-      <h1 class="w3-text-teal">Welcome to the SALC website!</h1>
+      <h1 class="w3-text-teal">Corpus search</h1>
       <p>Content.</p>
-      <p>Preview of the corpus. Maybe a screenshot or a gif.</p>
     </div>
   </div>
 
-{#  <div class="w3-row">#}
-{#    <div class="w3-container">#}
-{#      <h1 class="w3-text-teal">Heading</h1>#}
-{#      <p>Content.</p>#}
-{#    </div>#}
-{#  </div>#}
 
   <footer id="myFooter">
-    <div class="w3-container w3-theme-l2 w3-padding-26">
-      <h5>AELRC Group at Georgetown Universty</h5>
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+      <h4>Footer</h4>
     </div>
 
     <div class="w3-container w3-theme-l1">

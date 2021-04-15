@@ -55,7 +55,7 @@ def logout(request):
 
 def login_corpus(request):
     if request.session.get('is_login', None):
-        return redirect('/index/')
+        return render(request, 'login/corpus.html')
     else:
         return redirect('/login/')
 

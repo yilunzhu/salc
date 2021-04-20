@@ -1,0 +1,10 @@
+<h1>Search Results</h1>
+
+
+<ul>
+  {% for corpus in object_list %}
+    <li>
+      <b> {{corpus.sample}} -- {{corpus.task}} </b>: {{corpus.utterance}}
+    </li>
+  {% endfor %}
+</ul>

@@ -2,26 +2,27 @@
 <html lang="en">
 <h1>Corpus Page</h1>
 
-<h3>Search for something here...</h3>
-<form action="{% url 'search_results' %}" method="get">
+<h4>Search language (EN/FR)</h4>
+<form action="{% url 'search_lang_results' %}" method="get">
+
   <input name="q" type="text">
   <button type="submit">Search</button>
 </form>
- <h3>Data Outout</h3>
-  <p>Output of SALC basically looks like this:</p>
-  <table border width="75"%>
-    <tr>
-    <th rowspan="2"></th><th colspan="3">Data</th>
-    </tr>
-    <tr>
-    <th>Sample</th><th>Task</th><th>Utterance</th>
-    </tr>
-    <tr>
-    <th>Example 1</th><td>pre0916</td><td>Instructions/Set up</td><td>Raise your hand if there is any problem.</td>
-    </tr>
-    <tr>
-    <th>Example 2</th><td>pre0916</td><td>Introduction/Warmup</td><td>Ravi de faire votre conaissance. Où habitez-vous?</td>
-    </tr>
 
-    <table>
+<h4>Search task</h4>
+<form action="{% url 'search_task_results' %}" method="get">
+
+  <input name="q" type="text">
+  <button type="submit">Search</button>
+</form>
+
+
+<h4>Search utterance</h4>
+
+<form action="{% url 'search_results' %}" method="get">
+
+  <input name="q" type="text">
+  <button type="submit">Search</button>
+</form>  
+
 </html>
